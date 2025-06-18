@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon index.js"
+     "start": "nodemon index.js",
+     "build": "npm install && docker build -t cpp-runner -f docker/cpp.Dockerfile . && docker build -t python-runner -f docker/python.Dockerfile . && docker build -t java-runner -f docker/java.Dockerfile ."
   },
   "dependencies": {
     "bull": "^4.0.2",

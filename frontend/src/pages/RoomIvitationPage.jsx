@@ -11,7 +11,7 @@ import {
     deleteMyRoom,
     getRoomInvites
 } from "../lib/api";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { CheckCircleIcon, MapPinIcon, UserPlusIcon, UsersIcon } from "lucide-react";
 
 
