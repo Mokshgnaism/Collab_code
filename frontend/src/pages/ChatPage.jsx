@@ -16,7 +16,7 @@ export default function ChatPage({ userId }) {
     const roomId = getRoomId(userId, friendId);
     roomIdRef.current = roomId;
 
-    const socket = io("http://localhost:5002");
+    const socket = io("34.45.140.90:5002");
     socketRef.current = socket;
     socket.emit("join-chat", { roomId });
 

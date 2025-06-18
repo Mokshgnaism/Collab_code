@@ -7,7 +7,7 @@ import { UserPlus } from "lucide-react"; // or any icon you like
 import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../lib/axios";
 import axios from "axios";
-const socket = io("http://localhost:5000");
+const socket = io("34.45.140.90:5000");
 
 export default function RoomPage() {
   const { id: roomId } = useParams();
@@ -23,7 +23,7 @@ export default function RoomPage() {
   isPending: isGettingOutput,
 } = useMutation({
   mutationFn: async () => {
-    const response = await axios.get(`http://localhost:5010/output/${roomId}`);
+    const response = await axios.get(`34.45.140.90:5010/output/${roomId}`);
     return response.data.output;
   }
 });
@@ -31,7 +31,7 @@ export default function RoomPage() {
   const { mutate: runCode, isPending: isRunning } = useMutation({
     mutationFn: async () => {
       console.log("trying run code;;;");
-      const response = await axios.post("http://localhost:5010/submit-code", {
+      const response = await axios.post("34.45.140.90:5010/submit-code", {
         "roomId": roomId,
         language,
         code,

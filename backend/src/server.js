@@ -22,4 +22,12 @@ app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
 const port = process.env.PORT;
 
+const __dirname = path.resolve();
+
+
+  app.use(express.static(path.join(__dirname,"../frontend/dist")));
+  app.get("/{*any}",(req,res)=>{
+    res.sendFile(path.join(__dirname,"../frontend/dist/index.html"));
+  })
+
 app.listen(port,()=>console.log(`server running on ${port}`));
