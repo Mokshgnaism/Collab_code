@@ -23,7 +23,31 @@ This is a **collaborative code editor** built with real-time support, real-time 
 
 ### ✅ General
 
-* User Auth ((JWT+Session)-based) implemented token rotation and validated them against the browser fingerprint and hashed redis entries for more security . log out from all devices supported via otp based verification 
+## 🔐 Secure User Authentication
+
+Our application implements a robust and secure authentication mechanism combining JWTs and sessions for optimal protection.
+
+### ✅ Features
+
+- **JWT + Session-Based Authentication**  
+  Combines stateless JWTs with server-side sessions to provide both scalability and control.
+
+- **Token Rotation**  
+  Refresh tokens are rotated with each request, minimizing the risk of long-lived token abuse.
+
+- **Device-Level Validation**  
+  Each token is tied to a hashed browser fingerprint to ensure it's used only on the issuing device.
+
+- **Redis-Backed Token Storage**  
+  Access and refresh tokens are stored securely as hashed entries in Redis for fast invalidation and tracking.
+
+- **Global Logout with OTP Verification**  
+  Users can securely log out from all active devices using a verified OTP flow.
+
+---
+
+This architecture ensures both usability and strong session security across all entry points.
+
 * Survey system with role-based users (Admin, Business, User)
 
 ### 🖋️ Collaborative Editor
