@@ -28,7 +28,7 @@ const SignUpPage = () => {
           <div className="mb-4 flex items-center justify-start gap-2">
             <ShipWheelIcon className="size-9 text-primary" />
             <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary tracking-wider">
-              LiveColab 
+              CollabCode 
             </span>
           </div>
 
@@ -45,7 +45,7 @@ const SignUpPage = () => {
                 <div>
                   <h2 className="text-xl font-semibold">Create an Account</h2>
                   <p className="text-sm opacity-70">
-                    Join LiveColab and start collaborating with people...
+                    Join CollabCode and start collaborating with people...
                   </p>
                 </div>
 
@@ -116,15 +116,6 @@ const SignUpPage = () => {
                     "Create Account"
                   )}
                 </button>
-
-                <div className="text-center mt-4">
-                  <p className="text-sm">
-                    Already have an account?{" "}
-                    <Link to="/login" className="text-primary hover:underline">
-                      Sign in
-                    </Link>
-                  </p>
-                </div>
 
                   <div className="text-center mt-4">
                   <p className="text-sm">

@@ -4,8 +4,7 @@ const { submitCode, getOutput } = require("./controllers/codeController");
 require("./queue/worker");
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-
+app.use(cors());
 app.use(express.json());
 
 app.post("/submit-code", submitCode);

@@ -4,17 +4,17 @@ import jwt from "jsonwebtoken";
 import {v4} from "uuid";
 import redis from "../config/dbConnect.js";
 import mongoose from "mongoose";
-import { sendOtp, verifyOtp } from "../utils/OtpServices.js";
+import { sendOtp, verifyOtp } from "../utils/otpServices.js";
 const COOKIE_OPTIONS_1 = {
   httpOnly: true,
-  secure: true,  
+  secure: false,  
   sameSite: "lax",          
   maxAge: 7 * 24 * 60 * 60 * 1000 
 };
 
 const COOKIE_OPTIONS_2 = {
   httpOnly: true,
-  secure: true,  
+  secure: false,  
   sameSite: "lax",          
   maxAge: 15* 60 * 1000
 };
