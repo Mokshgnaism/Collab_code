@@ -10,7 +10,9 @@ app.use(cookieParser());
 import { dbConnect } from "./config/dbConnect.js";
 import redis from "./config/dbConnect.js";
 import authRoutes from "./routes/authRoutes.js";
-import userRoutes from "./routes/userRoutes.js"
+import userRoutes from "./routes/userRoutes.js";
+import rateLimiter from "./middleWare/ratelimit.js";
+
 dbConnect();
 
 
@@ -18,7 +20,7 @@ app.use(cors({
   origin: "http://localhost:5173",
   credentials: true,
 }));
-
+app.use(rateLimiter);
 app.use("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
 const port = process.env.PORT;
