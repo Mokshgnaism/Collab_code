@@ -109,7 +109,6 @@ cd code-executor && node index.js
 
 * Uses Docker containers for microservices(codeExecution)
 * Socket servers are hosted on other ports
-* Can be hosted on EC2
 * CORS managed using wildcard + credentials
 * Let's Encrypt can provide HTTPS certificates
 * Deployed on a Google Cloud VM and configured Nginx as a reverse proxy for secure and efficient routing
