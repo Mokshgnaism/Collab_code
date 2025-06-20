@@ -57,7 +57,7 @@ This architecture ensures both usability and strong session security across all 
 * Output & Input area below editor
 * Run button executes via microservice
 * Invite friends to a room
-* Will support cursor sharing
+* Will support cursor sharing(in near Future)
 
 ### 🔌 Socket Features
 
