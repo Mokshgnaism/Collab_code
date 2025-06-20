@@ -79,7 +79,7 @@ This architecture ensures both usability and strong session security across all 
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/collab-editor
+https://github.com/Mokshgnaism/Collab_code
 cd collab-editor
 
 # Install dependencies
