@@ -112,6 +112,8 @@ cd code-executor && node index.js
 * Can be hosted on EC2
 * CORS managed using wildcard + credentials
 * Let's Encrypt can provide HTTPS certificates
+* Deployed on a Google Cloud VM and configured Nginx as a reverse proxy for secure and efficient routing
+  
 
 ---
 
@@ -128,13 +130,13 @@ cd code-executor && node index.js
 
 * Started: June 2025
 * Built in \~10 days
-* Part of internship resume project series
+* Part of internship resume project
 
 ---
 
 ## ✨ Author
 
-* Mokshu (IIT ISM Dhanbad CSE)
+* Gorantla Mokshgna (IIT ISM Dhanbad CSE)
 
 ---
 
@@ -151,6 +153,3 @@ cd code-executor && node index.js
 
 ---
 
-> For full documentation on socket usage, invite flow, and more, please refer to `docs/` (WIP).
-
----
