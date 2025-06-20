@@ -1,10 +1,10 @@
-// rateLimiter.js
+
 const RATE_LIMIT = {
-  capacity: 10,            // max tokens
-  refillInterval: 10000,    // ms per token
+  capacity: 10,           
+  refillInterval: 10000,    
 };
 
-const buckets = new Map(); // ip → { tokens, lastRefill }
+const buckets = new Map(); 
 
 function rateLimiter(req, res, next) {
   const ip = req.ip || req.connection.remoteAddress;
@@ -13,13 +13,11 @@ function rateLimiter(req, res, next) {
   const now = Date.now();
 
   if (!bucket) {
-    // first time: start full
     bucket = {
       tokens: RATE_LIMIT.capacity,
       lastRefill: now,
     };
   } else {
-    // refill tokens
     const elapsed = now - bucket.lastRefill;
     const tokensToAdd = Math.floor(elapsed / RATE_LIMIT.refillInterval);
     if (tokensToAdd > 0) {
@@ -35,11 +33,9 @@ function rateLimiter(req, res, next) {
   if (bucket.tokens > 0) {
     bucket.tokens -= 1;
     buckets.set(ip, bucket);
-    // Optionally expose remaining tokens in headers:
     res.setHeader('X-RateLimit-Remaining', bucket.tokens);
     return next();
   } else {
-    // no tokens left → too many requests
     res.setHeader('Retry-After', Math.ceil(
       (RATE_LIMIT.refillInterval - (now - bucket.lastRefill)) / 1000
     ));
