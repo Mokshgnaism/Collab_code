@@ -107,10 +107,10 @@ cd code-executor && node index.js
 
 ## 🚀 Deployment
 
-* Uses Docker containers for microservices
+* Uses Docker containers for microservices(codeExecution)
+* Socket servers are hosted on other ports
 * Can be hosted on EC2
 * CORS managed using wildcard + credentials
-* Socket paths can be namespaced: `/socket/chat`, `/socket/room`
 * Let's Encrypt can provide HTTPS certificates
 
 ---
@@ -118,8 +118,6 @@ cd code-executor && node index.js
 ## ✈ TODO
 
 * [x] Input/Output sync via socket
-* [x] Run button
-* [x] Java support with Docker
 * [x] Invite system UI revamp
 * [ ] Cursor tracking between users
 * [ ] Better user session sync on reload
@@ -129,7 +127,7 @@ cd code-executor && node index.js
 ## 📅 Timeline
 
 * Started: June 2025
-* Built in \~3 weeks
+* Built in \~10 days
 * Part of internship resume project series
 
 ---
