@@ -7,7 +7,7 @@ import { UserPlus } from "lucide-react"; // or any icon you like
 import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../lib/axios";
 import axios from "axios";
-const socket = io("http://34.45.140.90:5000");//this is not the url that is being in the project we have deployed the sockets on other domains from the same dns 
+const socket = io("http://localhost:5000");//this is not the url that is being in the project we have deployed the sockets on other domains from the same dns 
 //provider and the ports remain same with nginx handling the proxy so pleasse ignore the urls ...
 
 export default function RoomPage() {
@@ -25,7 +25,7 @@ export default function RoomPage() {
   isPending: isGettingOutput,
 } = useMutation({
   mutationFn: async () => {
-    const response = await axios.get(`34.45.140.90:5010/output/${jobId}`);
+    const response = await axios.get(`http://localhost:5010/output/${jobId}`);
     return response.data.output;
   }
 });
@@ -33,7 +33,7 @@ export default function RoomPage() {
   const { mutate: runCode, isPending: isRunning } = useMutation({
     mutationFn: async () => {
       console.log("trying run code;;;");
-      const response = await axios.post("34.45.140.90:5010/submit-code", {
+      const response = await axios.post("http://localhost:5010/submit-code", {
         "roomId": roomId,
         language,
         code,
