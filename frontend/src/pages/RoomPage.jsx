@@ -7,7 +7,7 @@ import { UserPlus } from "lucide-react"; // or any icon you like
 import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../lib/axios";
 import axios from "axios";
-const socket = io("34.45.140.90:5000");
+const socket = io("http://34.45.140.90:5000");
 
 export default function RoomPage() {
   const { id: roomId } = useParams();
