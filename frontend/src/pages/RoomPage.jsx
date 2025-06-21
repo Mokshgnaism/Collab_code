@@ -18,12 +18,13 @@ export default function RoomPage() {
   const [input, setInput] = useState("");
   const [output, setoutput] = useState("");
   const [language,setlanguage]=useState("cpp");
+  const [jobId,setJobId] = useState("");
   const {
   mutateAsync: getOutput,
   isPending: isGettingOutput,
 } = useMutation({
   mutationFn: async () => {
-    const response = await axios.get(`34.45.140.90:5010/output/${roomId}`);
+    const response = await axios.get(`34.45.140.90:5010/output/${jobId}`);
     return response.data.output;
   }
 });
@@ -37,8 +38,9 @@ export default function RoomPage() {
         code,
         input
       })
-      console.log("finished getting it ...")
-      return response.data;//just for fun...
+      console.log("finished getting it ...");
+      setJobId(response.data.jobId);
+      return response.data;
     },
     onSuccess: async () => {
       
@@ -47,9 +49,9 @@ export default function RoomPage() {
       let output = "";
 
       while (attempts < maxAttempts) {
-        await new Promise((res) => setTimeout(res, 1000)); // wait 1 sec
+        await new Promise((res) => setTimeout(res, 1000));
         try {
-          const response = await getOutput(); // using mutateAsync from useMutation
+          const response = await getOutput(); 
           if (response && response.trim() !== "") {
             output = response;
             break;
