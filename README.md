@@ -82,25 +82,12 @@ This architecture ensures both usability and strong session security across all 
 https://github.com/Mokshgnaism/Collab_code
 cd collab-editor
 
-# Install dependencies
-cd backend && npm install
-cd ../frontend && npm install
-cd ../code-executor && npm install
-
-# Start redis manually or with Docker
-redis-server
-
-# Start backend
-cd backend && npm run dev
-
-# Start socket server
-cd socketServer && node index.js
-
-# Start frontend
-cd frontend && npm run dev
-
-# Start code execution service
-cd code-executor && node index.js
+#install the basic dependencies
+npm i
+#now build the whole project run these commands in the main project
+npm run build
+npm run start-all
+#go to localhost:5001 and access your wenbsite make sure you changed the urls in frontend where it says the ip address...
 ```
 
 ---
