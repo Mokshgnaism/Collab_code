@@ -36,7 +36,7 @@ jobQueue.process(async (job) => {
       `docker run --rm -v ${dockerCodePath}:/app/${codeFile} -v ${dockerInputPath}:/app/input.txt ${dockerImage}`,
       (err, stdout, stderr) => {
         const output = stderr || stdout || "No output";
-        redisClient.set(`output:${roomId}`, output);
+        redisClient.set(`output:${job.id}`, output);
         if (err || stderr) reject(stderr || err.message);
         else resolve(stdout);
       }
