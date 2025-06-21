@@ -7,7 +7,8 @@ import { UserPlus } from "lucide-react"; // or any icon you like
 import { useMutation } from "@tanstack/react-query";
 import { axiosInstance } from "../lib/axios";
 import axios from "axios";
-const socket = io("http://34.45.140.90:5000");
+const socket = io("http://34.45.140.90:5000");//this is not the url that is being in the project we have deployed the sockets on other domains from the same dns 
+//provider and the ports remain same with nginx handling the proxy so pleasse ignore the urls ...
 
 export default function RoomPage() {
   const { id: roomId } = useParams();
